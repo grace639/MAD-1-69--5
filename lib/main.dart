@@ -30,20 +30,36 @@ class MyHomePage extends StatelessWidget {
         // คง Padding ไว้สำหรับระยะห่างโดยรวม
         padding: EdgeInsets.all(16.0),
 
-        child: Row(
+        // ภายในวิดเจ็ต Padding ของ body
+        child: Column(
+          // คอลัมน์หลักสำหรับหน้า
           children: <Widget>[
-            Expanded(flex: 1, child: Container(color: Colors.red, height: 100)),
-            Expanded(
-              flex: 2,
-              child: Container(color: Colors.green, height: 100),
+            Container(
+              // container การ์ด
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Row(
+                children: <Widget> [
+                  Icon(Icons.account_circle, size: 50),
+                  SizedBox(width: 16.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('โปรไฟล์ผู้ใช้',style: TextStyle(fontWeight: FontWeight.bold)),
+                      SizedBox(height: 8.0),
+                      Text('แก้ไขรายละเอียดโปรไฟล์ของคุณที่นี่'),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            Expanded(
-              flex: 1,
-              child: Container(color: Colors.blue, height: 100),
-            ),
+            // เพิ่มการ์ดหรือวิดเจ็ตอื่นๆ ทีหลังหากต้องการ
           ],
         ),
-
         // Placeholder
       ),
     );
