@@ -26,17 +26,21 @@ class MyHomePage extends StatelessWidget {
         title: const Text('ปฏิบัติการบทที่ 5 - Layouts'), // อัปเดต title
         backgroundColor: Colors.indigo, // เปลี่ยนสีตามต้องการ
       ),
-      body:  Padding(
+      body: Padding(
         // คง Padding ไว้สำหรับระยะห่างโดยรวม
         padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment:
-              CrossAxisAlignment.center, // ค่าเริ่มต้น, ทำให้ชัดเจน
+
+        child: Row(
           children: <Widget>[
-            Container(color: Colors.red, width: 50, height: 50),
-            Container(color: Colors.green, width: 100, height: 50),
-            Container(color: Colors.blue, width: 75, height: 50),
+            Expanded(flex: 1, child: Container(color: Colors.red, height: 100)),
+            Expanded(
+              flex: 2,
+              child: Container(color: Colors.green, height: 100),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(color: Colors.blue, height: 100),
+            ),
           ],
         ),
 
